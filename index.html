@@ -15,10 +15,19 @@
         </div>
     </header>
     <div id="search-container">
-        <input type="text" id="input" placeholder=" Want to find an image or gif?" style="height: 30px;">
-        <button id="searchBtn">Search</button>
+        <input type="text" id="input" placeholder=" Want to find an image or gif" style="height: 30px;">
+        <button onclick="sendGiphyApiRequest()" onclick="sendPexelsApiRequest()" id="searchBtn">Search</button>
     </div>
-
+    <main> 
+        <div class="content-container">
+            <div class="Pexels-results" id="pexels-parent">
+                <!-- this is where the pexels results will be generated -->
+        </div>
+        <div class="giphy-results" id="giphy-parent">
+            <!-- this is where the giphy results will be generated -->
+        </div>
+    <main>
+    <script src="./assets/script.js"></script>
 </body>
 
 </html>
