@@ -11,17 +11,19 @@ btn.addEventListener("click", function() {
 })
 
 function sendGiphyApiRequest() {
-    var topic = document.getElementById("input");
+    var topic = document.getElementById("input").value;
     var requestGiphy = `https://api.giphy.com/v1/gifs/search?q=${topic}&rating=g&api_key=${GiphyAPIkey}`;
+    console.log(requestGiphy);
     fetch(requestGiphy).then(function(data){
         return data.json()
     })
     .then(function(json){
+        console.log(json);
         console.log(json.data[0].images.fixed_height.url)
         var gifPath = json.data[0].images.fixed_height.url;
-        var gif = document.createElement("gif");
+        var gif = document.createElement("img");
         gif.setAttribute("src", gifPath)
-        document.GiphyParent.appendChild(gif);
+        GiphyParent.appendChild(gif);
     })
 };
 
